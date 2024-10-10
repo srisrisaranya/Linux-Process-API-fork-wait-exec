@@ -93,4 +93,4 @@ int main()
 ![image](https://github.com/user-attachments/assets/67d39df4-859e-40a4-8502-40433df6ecb1)
 
 # RESULT:
-The programs are executed successfully.
+The programs are executed Successfully.
