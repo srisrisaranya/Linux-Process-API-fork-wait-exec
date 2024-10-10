@@ -24,6 +24,7 @@ Test the C Program for the desired output.
 # PROGRAM:
 
 ## C Program to print process ID and parent Process ID using Linux API system calls
+
 ```
 #include <stdio.h>
 #include <sys/types.h>
@@ -44,12 +45,13 @@ int main(void)
 	printf("The process id of parent function: %d\n",p_process_id);
 	return 0; }
 ```
-##OUTPUT
-```
-localhost:~# ./a.out
-The process id: 97
-The process id of parent function: 61
-```
+
+## OUTPUT:
+
+
+![image](https://github.com/user-attachments/assets/6f562b53-c036-4cba-acd7-1b3db2d3f040)
+
+
 ## C Program to create new process using Linux API system calls fork() and exit()
 ```
 #include <stdio.h>
@@ -67,49 +69,28 @@ sleep(100);
 exit(0);} 
 }
 ```
+## OUTPUT: 
 
-##OUTPUT
-```
+![image](https://github.com/user-attachments/assets/7db4a45d-a5b7-48be-8d16-5ac6710a01a5)
 
-localhost:~# ./a.out
-I am parent, my pid is 108
-Iam child my pid is 109
-My parent pid is:108
-
-```
 ## C Program to execute Linux system commands using Linux API system calls exec() family
-```
-#include <stdlib.h>
-#include <sys/wait.h>
-#include <sys/types.h>
-int main()
-{       int status;
-        printf("Running ps with execlp\n");
-        execl("ps", "ps", "ax", NULL);
-        wait(&status);
-        if (WIFEXITED(status))
-                printf("child exited with status of %d\n", WEXITSTATUS(status));
-        else
-                puts("child did not exit successfully\n");
-        printf("Done.\n");
-printf("Running ps with execlp. Now with path specified\n");
-        execl("/bin/ps", "ps", "ax", NULL);
-        wait(&status);
-        if (WIFEXITED(status))
-                printf("child exited with status of %d\n", WEXITSTATUS(status));
-        else
-                puts("child did not exit successfully\n");
-        printf("Done.\n");
-        exit(0);}
 
 ```
-##OUTPUT
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	printf("Running ps with execlp\n");
+	execlp("ps", "ps", "ax", NULL);
+	printf("Done.\n");
+	exit(0);
+}
 ```
-localhost:~# ./a.out
-Running ps with execlp
-child exited with status of 0
-Done.
-Running ps with execlp. Now with path specified
-```
+
+## OUTPUT:
+
+![image](https://github.com/user-attachments/assets/67d39df4-859e-40a4-8502-40433df6ecb1)
+
 # RESULT:
 The programs are executed successfully.
